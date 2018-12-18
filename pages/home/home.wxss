@@ -1,0 +1,31 @@
+/* pages/home/home.wxss */
+.slider,.slider swiper,.slider image{
+  height: 390rpx;
+  width: 100%;
+}
+.slider{
+
+}
+.jiugongge{
+  display: flex;
+  flex-wrap: wrap;
+}
+.jiugong-item{
+  width:33.333%;
+  height:200rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+  border-right:1px solid #ccc;
+  text-align: center;
+}
+.jiugong-item:nth-child(3n){
+  border-right:0;
+}
+.jiugong-item image{
+  
+  width:120rpx;height: 120rpx;
+}
+.divider{
+  height:10rpx;
+  background: #f1f1f1;
+}
