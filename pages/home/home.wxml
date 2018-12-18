@@ -9,6 +9,11 @@
     </swiper>
   </view>
   <view class='divider'></view>
+  <view class='search'>
+    <image src="http://192.168.43.93:3000/img/search_icon.png"></image>
+    <input type='text' placeholder='请输入要搜索的关键字' placeholder-style='font-size:15px;'></input>
+  </view>
+  <view class='divider'></view>
   <view class="jiugongge">
     <view class='jiugong-item' wx:for="{{jiugong}}" wx:key="index">
       <image src="{{item.img_url}}" lazy-load mode="aspectFill"></image>

@@ -6,10 +6,10 @@ Page({
    */
   data: {
     list:[
-      { id: 1, img_url:"http://192.168.43.93:3000/img/banner1.png"},
-      { id: 2, img_url:"http://192.168.43.93:3000/img/banner2.png"},
-      { id: 3, img_url:"http://192.168.43.93:3000/img/banner3.png"},
-      { id: 4, img_url:"http://192.168.43.93:3000/img/banner4.png"},
+      { id: 1, img_url:"http://192.168.43.93:3000/img/lunbo_1.jpg"},
+      { id: 2, img_url:"http://192.168.43.93:3000/img/lunbo_2.jpg"},
+      { id: 3, img_url:"http://192.168.43.93:3000/img/lunbo_3.jpg"},
+      { id: 4, img_url:"http://192.168.43.93:3000/img/lunbo_4.jpg"},
       ],
     jiugong:[
       { id: 1, img_url:"http://192.168.43.93:3000/img/jiugongge1.jpg",msg:"全部商品"},
