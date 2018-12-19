@@ -37,3 +37,42 @@
   height:10rpx;
   background: #f1f1f1;
 }
+.rmtj,.rmtj image{
+  width: 100%;
+  height: 160rpx;
+}
+.tjlist{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tjlist .tjlist-item{
+  width:49%;
+  height:500rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+.tjlist-item .tjimg{
+  width:100%;
+  height: 300rpx;
+}
+text.tjmsg{
+  display: inline-block;
+  font-size: 14px;
+  width:360rpx;
+  height: 42px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+text.tjprice{
+  float: left;
+  color:red;
+  margin-left:20px;
+}
+image.tjcart{
+  width:50rpx;
+  height: 50rpx;
+  float: right;
+  margin-right:20rpx;
+  margin-bottom: 600rpx;
+}
