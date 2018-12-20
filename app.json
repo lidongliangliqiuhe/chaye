@@ -17,26 +17,26 @@
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "pages/static/zhuye.png",
-        "selectedIconPath": "pages/static/zhuye.png"
+        "iconPath": "pages/static/zhuye1.jpg",
+        "selectedIconPath": "pages/static/zhuye1-a.jpg"
       },
       {
         "pagePath": "pages/logs/logs",
         "text": "分类",
-        "iconPath": "pages/static/fenlei.png",
-        "selectedIconPath": "pages/static/fenlei.png"
+        "iconPath": "pages/static/fenlei1.jpg",
+        "selectedIconPath": "pages/static/fenlei1-a.jpg"
       },
       {
         "pagePath": "pages/contact/contact",
         "text": "购物车",
-        "iconPath": "pages/static/cart.png",
-        "selectedIconPath": "pages/static/cart.png"
+        "iconPath": "pages/static/cart1.jpg",
+        "selectedIconPath": "pages/static/cart1-a.jpg"
       },
       {
         "pagePath": "pages/profile/profile",
         "text": "个人中心",
-        "iconPath": "pages/static/profile.png",
-        "selectedIconPath": "pages/static/profile.png"
+        "iconPath": "pages/static/profile1.jpg",
+        "selectedIconPath": "pages/static/profile1-a.jpg"
       }
     ]
   }

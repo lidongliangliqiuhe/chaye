@@ -7,6 +7,16 @@ Page({
       url: "/pages/shoplist/shoplist?pid" + pid,
     })
   },
+  handler2:function(){
+    var myurl="http://127.0.0.1:3000/imagelist";
+    wx.request({
+      url:myurl,
+      success:(res)=>{
+        console.log(res.data)
+        //console.log(this) this 指的是当前的page对象
+      }
+    })
+  },
   /**
    * 页面的初始数据
    */

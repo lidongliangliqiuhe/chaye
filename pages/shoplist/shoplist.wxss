@@ -65,3 +65,19 @@ image.slcart{
   float: right;
   margin-right:20rpx;
 }
+.shop-star{
+  position: relative;
+  right: -20rpx;
+  top:20rpx;
+}
+.star-after{
+  color:#e2e2e2;
+}
+.star-before{
+  color:#f19e38;
+  position: absolute;
+  top:0;
+  left:0;
+  width:15%;
+  overflow: hidden;
+}

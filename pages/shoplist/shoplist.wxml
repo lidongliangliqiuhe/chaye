@@ -21,6 +21,6 @@
     </view>
 </view> 
 <view class='shop-star'>
-    <view class='start-after'>★★★★★</view>
-    <view class='start-before'>★★★★★</view>
+    <view class='star-after'>★★★★★</view>
+    <view class='star-before'>★★★★★</view>
 </view>
