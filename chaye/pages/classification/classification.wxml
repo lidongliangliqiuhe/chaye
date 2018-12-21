@@ -1,0 +1,53 @@
+<!--pages/classification/classification.wxml-->
+<!-- 搜索框 -->
+<view class='sousuo'>
+  <image class='sousuoimg' src='http://192.168.43.93:3000/img/search_icon.png' lazy-load mode="aspectFit"></image>
+  <input class='sousuoinp' type="text" placeholder='请输入要搜索的关键字' placeholder-style='font-size:16px;'></input>
+  <button class='sousuobtn' catchtap='sousuo'>搜索</button>
+</view>
+<view class="classify">
+  <!--分类导航栏-->
+  <scroll-view class='left-navbar' scroll-y="true">
+    <view wx:for="{{screenArray}}" class="{{ currentTab == index ? 'active' : '' }}" wx:key="unique" bindtap="{{ currentTab != index ? 'navbarTap':'' }}" id="{{index}}" data-screenId="{{item.screenId}}">{{item.screenName}}
+    <!-- 导航项 -->
+    </view>
+    <view>热门推荐</view>
+    <view>花茶</view>
+    <view>龙井</view>
+    <view>普洱</view>
+    <view>红茶</view>
+    <view>礼茶</view>
+    <view>茶具</view>
+    <view>铁观音</view>
+    <view>金骏眉</view>
+    <view>碧螺春</view>
+    <view>大红袍</view>
+    <view>菊花茶</view>
+    <view>茉莉花茶</view>
+    <view>福鼎白茶</view>
+    <view>其他分类</view>
+  </scroll-view>
+  <scroll-view id="right" scroll-y="true" scroll-top="{{scrollTop}}">
+    <!--顶部图片-->
+    <view class="goods-banner">
+      <image class="img-banner" src="{{childrenArray.showImageUrl}}" wx:if="{{childrenArray.showImageUrl}}" mode="scaleToFill"></image>
+    </view>
+    <!--商品展示-->
+    <view class="goods-list" wx:for="{{childrenArray.childrenScreenArray}}" wx:key="unique">
+      <view class="goods-title">{{item.screenName}}</view>
+      <view wx:for="{{item.childrenScreenArray}}" class="goods" wx:key="unique" bindtap="ToSearchResult" id="{{item.screenName}}" >
+        <image class="img" src="{{item.showImageUrl}}" wx:if="{{item.showImageUrl}}"></image>
+        <text>{{item.screenName}}</text>
+      </view>
+    </view>
+    <!-- 对应导航项 的商品列表 -->
+    <view class="goods-list">
+      <view class="goods-title">新鲜蔬菜</view>
+      <view class="goods">
+        <image class="img" src="http://192.168.43.93:3000/img/tjlist/tjlist1.jpg"></image>
+        <text>葵花籽清油</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+

@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/logs/logs",
+    "pages/shoplist/shoplist",
+    "pages/profile/profile",
+    "pages/login/login",
+    "pages/order/order",
+    "pages/classification/classification",
+    "pages/cart/cart"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#228b22",
+    "navigationBarTitleText": "佳亮茶业",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "pages/static/zhuye1.jpg",
+        "selectedIconPath": "pages/static/zhuye1-a.jpg"
+      },
+      {
+        "pagePath": "pages/classification/classification",
+        "text": "分类",
+        "iconPath": "pages/static/fenlei1.jpg",
+        "selectedIconPath": "pages/static/fenlei1-a.jpg"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "pages/static/cart1.jpg",
+        "selectedIconPath": "pages/static/cart1-a.jpg"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "个人中心",
+        "iconPath": "pages/static/profile1.jpg",
+        "selectedIconPath": "pages/static/profile1-a.jpg"
+      }
+    ]
+  }
+}
