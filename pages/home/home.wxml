@@ -38,3 +38,8 @@
     </view>
   </view>
 </view>
+<view class='yinyue'>
+  <image class='yinyue1' src='http://192.168.43.93:3000/img/yinyue.png' lazy-load mode="aspectFit"></image>
+  <text class='maohao'>         :</text>
+  <image class='bofang' catchtap='handleplay' src="{{isPlaying?'http://192.168.43.93:3000/img/zanting.png':'http://192.168.43.93:3000/img/bofang.png'}}" lazy-load mode="aspectFit"></image>
+</view>

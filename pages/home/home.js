@@ -1,5 +1,17 @@
 // pages/home/home.js
 Page({
+  handleplay: function () {
+    var isp=this.data.isPlaying;
+    if(isp){
+      wx.pauseBackgroundAudio();
+      this.setData({isPlaying:false})
+    }else{
+      this.setData({isPlaying:true});
+      wx.playBackgroundAudio({
+        dataUrl: 'http://192.168.43.93:3000/audio/gaoshanliushui.mp3',
+      })
+    }
+  },
   handler1:function(e){
     var pid=e.target.dataset.pid
     
@@ -22,6 +34,7 @@ Page({
    */
 
   data: {
+    isPlaying:0,
     list:[
       { id: 1, img_url:"http://192.168.43.93:3000/img/lunbo_1.jpg"},
       { id: 2, img_url:"http://192.168.43.93:3000/img/lunbo_2.jpg"},
@@ -50,7 +63,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+  
   },
 
   /**

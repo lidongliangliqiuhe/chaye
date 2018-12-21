@@ -1,7 +1,9 @@
-// pages/profile/profile.js
-var app = getApp()
+// pages/login/login.js
+var app =getApp();
 Page({
-
+  formsubmit:function(e){
+    console.log(e)
+  },
   /**
    * 页面的初始数据
    */
@@ -13,11 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.userInfo){
-      wx.redirectTo({
-        url: '/pages/login/login',
-      })
-    }
+
   },
 
   /**
