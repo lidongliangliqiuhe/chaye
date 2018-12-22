@@ -56,10 +56,6 @@
   width:75%;
   height:90%;
 }
-.img-banner{
-  height:150rpx;
-  width:100%;
-}
 .goods-list{
   display:flex;
   flex-wrap:wrap;

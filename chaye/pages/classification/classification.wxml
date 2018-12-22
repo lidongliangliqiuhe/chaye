@@ -8,43 +8,16 @@
 <view class="classify">
   <!--分类导航栏-->
   <scroll-view class='left-navbar' scroll-y="true">
-    <view wx:for="{{screenArray}}" class="{{ currentTab == index ? 'active' : '' }}" wx:key="unique" bindtap="{{ currentTab != index ? 'navbarTap':'' }}" id="{{index}}" data-screenId="{{item.screenId}}">{{item.screenName}}
-    <!-- 导航项 -->
-    </view>
-    <view>热门推荐</view>
-    <view>龙井</view>
-    <view>普洱</view>
-    <view>礼茶</view>
-    <view>茶具</view>
-    <view>铁观音</view>
-    <view>金骏眉</view>
-    <view>碧螺春</view>
-    <view>大红袍</view>
-    <view>菊花茶</view>
-    <view>正山小种</view>
-    <view>茉莉花茶</view>
-    <view>福鼎白茶</view>
-    <view>其他分类</view>
+    <view wx:for="{{leftnav}}" class="{{ styletab == index ? 'active' : '' }}" wx:key="index" catchtap="{{ styletab != index ? 'navbarTap':'' }}" id="{{index}}" data-screenId="{{index}}">{{item.cleibie}}
+     </view>
   </scroll-view>
+  <!-- 对应导航项 的商品列表 -->
   <scroll-view id="right" scroll-y="true" scroll-top="{{scrollTop}}">
-    <!--顶部图片-->
-    <view class="goods-banner">
-      <image class="img-banner" src="{{childrenArray.showImageUrl}}" wx:if="{{childrenArray.showImageUrl}}" mode="scaleToFill"></image>
-    </view>
-    <!--商品展示-->
-    <view class="goods-list" wx:for="{{childrenArray.childrenScreenArray}}" wx:key="unique">
-      <view class="goods-title">{{item.screenName}}</view>
-      <view wx:for="{{item.childrenScreenArray}}" class="goods" wx:key="unique" bindtap="ToSearchResult" id="{{item.screenName}}" >
-        <image class="img" src="{{item.showImageUrl}}" wx:if="{{item.showImageUrl}}"></image>
-        <text>{{item.screenName}}</text>
-      </view>
-    </view>
-    <!-- 对应导航项 的商品列表 -->
-    <view class="goods-list">
-      <view class="goods-title">新鲜蔬菜</view>
-      <view class="goods">
-        <image class="img" src="http://192.168.43.93:3000/img/tjlist/tjlist1.jpg"></image>
-        <text>葵花籽清油</text>
+    <view class="goods-list" wx:for="{{products}}" wx:key="index">
+      <view class="goods-title">{{item.cname}}</view>
+      <view class="goods" bindtap="ToSearchResult" id="{{index}}" >
+        <image class="img" src="{{item.cimg}}"></image>
+        <text>{{item.ctitle}}</text>
       </view>
     </view>
   </scroll-view>

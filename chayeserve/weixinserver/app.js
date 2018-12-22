@@ -33,14 +33,72 @@ app.use(express.static(__dirname+"/public"))
 //功能1:首页轮播图
 app.get("/imagelist",(req,res)=>{
    var obj = [
-     {id:1,img_url:"http://127.0.0.1:3000/img/banner1.png"},
-     {id:2,img_url:"http://127.0.0.1:3000/img/banner2.png"},
-     {id:3,img_url:"http://127.0.0.1:3000/img/banner3.png"},
-     {id:4,img_url:"http://127.0.0.1:3000/img/banner4.png"},
-
+	  { id: 1, img_url:"http://192.168.43.93:3000/img/lunbo_1.jpg"},
+      { id: 2, img_url:"http://192.168.43.93:3000/img/lunbo_2.jpg"},
+      { id: 3, img_url:"http://192.168.43.93:3000/img/lunbo_3.jpg"},
+      { id: 4, img_url:"http://192.168.43.93:3000/img/lunbo_4.jpg"},
    ];
    res.send(obj);
 });
+app.get("/jiugonggelist",(req,res)=>{
+	var obj =[
+		{ pid: 1, img_url:"http://192.168.43.93:3000/img/jiugongge1.jpg",msg:"全部商品"},
+		{ pid: 2, img_url:"http://192.168.43.93:3000/img/jiugongge2.jpg",msg:"福鼎白茶"},
+		{ pid: 3, img_url:"http://192.168.43.93:3000/img/jiugongge3.jpg",msg:"龙井"},
+		{ pid: 4, img_url:"http://192.168.43.93:3000/img/jiugongge4.jpg",msg:"花茶"},
+		{ pid: 5, img_url:"http://192.168.43.93:3000/img/jiugongge5.jpg",msg:"礼茶"},
+		{ pid: 6, img_url:"http://192.168.43.93:3000/img/jiugongge6.jpg",msg:"茶具"}
+	];
+	res.send(obj);
+})
+app.get("/rementuijianlist",(req,res)=>{
+	var sql="SELECT cid,cimg,ctitle,cprice FROM cy_laptop WHERE cis_tuijian=1"
+	pool.query(sql,(err,result)=>{
+		if(err)throw err;
+		res.send(result)
+	})
+})
+app.get("/getClassList",(req,res)=>{
+	var sql="SELECT cleibie from cy_laptop GROUP BY cleibie ORDER BY cid"
+	pool.query(sql,(err,result)=>{
+		if(err){throw err}
+		res.send(result)
+	})
+})
+app.get("/getproducts",(req,res)=>{
+	var cleibie=req.query.cleibie;
+	console.log(cleibie)
+	if(cleibie==1){
+		cleibie="普洱";
+	}else if(cleibie==2){
+		cleibie="礼茶";
+	}else if(cleibie==3){
+		cleibie="茶具"
+	}else if(cleibie==4){
+		cleibie="铁观音"	
+	}else if(cleibie==5){
+		cleibie="金俊眉"	
+	}else if(cleibie==6){
+		cleibie="碧螺春"	
+	}else if(cleibie==7){
+		cleibie="大红袍";
+	}else if(cleibie==8){
+		cleibie="菊花茶";
+	}else if(cleibie==9){
+		cleibie="正山小种"
+	}else if(cleibie==10){
+		cleibie="茉莉花茶"	
+	}else if(cleibie==11){
+		cleibie="福鼎白茶"	
+	}else if(cleibie==0){
+		cleibie="龙井"	
+	}
+	var sql="SELECT * FROM cy_laptop WHERE cleibie=? "
+	pool.query(sql,[cleibie],(err,result)=>{
+		if (err)throw err;
+		res.send(result)
+	})
+})
 
 //功能2:新闻分页显示
 app.get("/newslist",(req,res)=>{
