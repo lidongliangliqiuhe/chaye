@@ -12,10 +12,8 @@
     <!-- 导航项 -->
     </view>
     <view>热门推荐</view>
-    <view>花茶</view>
     <view>龙井</view>
     <view>普洱</view>
-    <view>红茶</view>
     <view>礼茶</view>
     <view>茶具</view>
     <view>铁观音</view>
@@ -23,6 +21,7 @@
     <view>碧螺春</view>
     <view>大红袍</view>
     <view>菊花茶</view>
+    <view>正山小种</view>
     <view>茉莉花茶</view>
     <view>福鼎白茶</view>
     <view>其他分类</view>
