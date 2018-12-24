@@ -1,10 +1,5 @@
 <!--pages/classification/classification.wxml-->
-<!-- 搜索框 -->
-<view class='sousuo'>
-  <image class='sousuoimg' src='http://192.168.43.93:3000/img/search_icon.png' lazy-load mode="aspectFit"></image>
-  <input class='sousuoinp' type="text" placeholder='请输入要搜索的关键字' placeholder-style='font-size:16px;'></input>
-  <button class='sousuobtn' catchtap='sousuo'>搜索</button>
-</view>
+
 <view class="classify">
   <!--分类导航栏-->
   <scroll-view class='left-navbar' scroll-y="true">

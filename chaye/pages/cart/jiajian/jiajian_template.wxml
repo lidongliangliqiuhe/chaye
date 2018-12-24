@@ -1,0 +1,9 @@
+<template name="jiajian">
+  <view class="sku">
+    <view class='stepper sum'>
+      <text class='{{minusStatus}}' catchtap='Minus' data-id="{{index}}">-</text>
+      <input bindinput='bindManual' value='{{gcount}}'data-id="{{index}}"></input>
+      <text catchtap='Plus' data-id="{{index}}">+</text>
+    </view>
+  </view>
+</template>

@@ -7,7 +7,8 @@
     "pages/login/login",
     "pages/order/order",
     "pages/classification/classification",
-    "pages/cart/cart"
+    "pages/cart/cart",
+    "pages/details/details"
   ],
   "window": {
     "backgroundTextStyle": "light",

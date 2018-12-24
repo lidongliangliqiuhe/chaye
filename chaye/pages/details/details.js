@@ -1,29 +1,18 @@
-// pages/shoplist/shoplist.js
+// pages/details/details.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    shoplist: []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: 'http://192.168.43.93:3000/gethomeproducts',
-      method: "get",
-      data: {
-        pid: options.pid
-      },
-      success: (res) => {
-        this.setData({
-          shoplist: res.data
-        })
-      }
-    })
+
   },
 
   /**

@@ -1,10 +1,4 @@
 <!--pages/shoplist/shoplist.wxml-->
-<view>
-  <view class='search'>
-    <image src="http://192.168.43.93:3000/img/search_icon.png"></image>
-    <input type='text' placeholder='请输入要搜索的关键字' placeholder-style='font-size:15px;'></input>
-  </view>
-</view>
 <view class='order'>
   <text>销量</text>
   <text>价格</text>
@@ -12,10 +6,11 @@
 <view class='shoplist'>
     <view class='shoplist-item' wx:for='{{shoplist}}' wx:key="index">
       <view class='divider'></view>
-      <image class='slimg' src="{{item.img_url}}" lazy-load mode="aspectFit"></image>
-      <text class='slmsg'>{{item.msg}}</text>
+      <image class='slimg' src="{{item.cimg}}" lazy-load mode="aspectFit"></image>
+      <text class='slmsg'>{{item.ctitle}}</text>
       <view>
-        <text class='slprice'>￥{{item.price}}</text>
+        <text class='slprice'>￥{{item.cprice}}</text>
+        <text class='slcount'>销量：{{item.csold_count}}</text>
         <image class='slcart' src='http://192.168.43.93:3000/img/littlecart.png' lazy-load mode="aspectFit"></image>
       </view>
     </view>

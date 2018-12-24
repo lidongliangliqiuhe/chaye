@@ -14,9 +14,8 @@ Page({
   },
   handler1:function(e){
     var pid=e.target.dataset.pid
-    
     wx.navigateTo({
-      url: "/pages/shoplist/shoplist?pid" + pid,
+      url: "/pages/shoplist/shoplist?pid=" + pid,
     })
   },
   handler2:function(){
@@ -27,6 +26,13 @@ Page({
         console.log(res.data)
         //console.log(this) this 指的是当前的page对象
       }
+    })
+  },
+  details:function(e){
+    //console.log(e.target.dataset.id)
+    //console.log(this.data.tjlist)
+    wx.navigateTo({
+      url: '/pages/details/details?cid='+e.target.dataset.id,
     })
   },
   /**

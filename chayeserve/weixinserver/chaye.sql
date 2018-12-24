@@ -104,6 +104,9 @@ CREATE TABLE cy_shoppingcart_item(
 /*添加购物车条目*/
 INSERT INTO cy_shoppingcart_item VALUES
 (NULL,1,30,30,0),
+(NULL,1,15,3,0),
+(NULL,1,6,4,0),
+(NULL,1,3,2,0),
 (NULL,2,30,30,1);
 
 

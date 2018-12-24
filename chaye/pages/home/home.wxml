@@ -9,11 +9,13 @@
     </swiper>
   </view>
   <view class='divider'></view>
+  <!-- 搜索框 -->
   <view class='search'>
     <image src="http://192.168.43.93:3000/img/search_icon.png"></image>
     <input type='text' placeholder='请输入要搜索的关键字' placeholder-style='font-size:15px;'></input>
   </view>
   <view class='divider'></view>
+  <!-- 九宫格 -->
   <view class="jiugongge">
     <view class='jiugong-item' wx:for="{{jiugong}}" wx:key="index">
       <image src="{{item.img_url}}" lazy-load mode="aspectFill" catchtap='handler1' data-pid='{{item.pid}}'></image>
@@ -27,9 +29,10 @@
     <image src="http://192.168.43.93:3000/img/rementuijan.png" lazy-load mode="aspectFill"></image>
   </view>
   <view class='divider'></view>
+  <!-- 推荐列表 -->
   <view class='tjlist'>
     <view class='tjlist-item' wx:for='{{tjlist}}' wx:key="index">
-      <image class='tjimg' src="{{item.cimg}}" lazy-load mode="aspectFit"></image>
+      <image class='tjimg' src="{{item.cimg}}" lazy-load mode="aspectFit"  data-id="{{item.cid}}" catchtap='details'></image>
       <text class='tjmsg'>{{item.ctitle}}</text>
       <view>
         <text class='tjprice'>￥{{item.cprice}}</text>
