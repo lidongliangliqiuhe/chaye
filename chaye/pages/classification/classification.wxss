@@ -29,9 +29,6 @@
   border-radius: 8px;
   background:#ccc;
 }
-.classify{
-  
-}
 .left-navbar{
   position:absolute;
   left:0;
@@ -54,27 +51,32 @@
   position:absolute;
   right:0;
   width:75%;
-  height:90%;
-}
-.goods-list{
+  height:100%;
   display:flex;
   flex-wrap:wrap;
-  margin-top:30rpx;
 }
-.goods-title{
-  width:100%;
-  font-size:15px;
-  font-weight:bold;
-  padding-left:10rpx;
-}
-.goods{
-  width:150rpx;
-  font-size:14px;
-  margin:15rpx;
-  text-align:center;
+.goods-list{
+  width: 47%;
+  display: inline-block;
+  margin: 3px;
 }
 .img{
-  width:140rpx;
-  height:140rpx;
+  width: 100%;
+  height: 137px;
 }
+.img1{
+   width:50rpx;
+  height: 50rpx;
+  float: right;
+}
+.goods-list text{
+  display: inline-block;
+  font-size: 16px;
+  width:90px;
+  height: 42px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 

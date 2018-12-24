@@ -13,12 +13,10 @@
   </scroll-view>
   <!-- 对应导航项 的商品列表 -->
   <scroll-view id="right" scroll-y="true" scroll-top="{{scrollTop}}">
-    <view class="goods-list" wx:for="{{products}}" wx:key="index">
-      <view class="goods-title">{{item.cname}}</view>
-      <view class="goods" bindtap="ToSearchResult" id="{{index}}" >
-        <image class="img" src="{{item.cimg}}"></image>
-        <text>{{item.ctitle}}</text>
-      </view>
+    <view class="goods-list" wx:for="{{products}}" catchtap="ToSearchResult" wx:key="index">
+      <image class="img" src="{{item.cimg}}" mode='aspectFit' lazy-load></image>
+      <text>{{item.cname}}</text>
+      <image class='img1' lazy-load mode="aspectFit" src="http://192.168.43.93:3000/img/littlecart.png"></image>
     </view>
   </scroll-view>
 </view>

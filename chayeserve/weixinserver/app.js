@@ -1,5 +1,7 @@
 //1:加载模块 express pool
 const express = require("express");
+const fs = require("fs")
+const multer = require("multer")
 const pool = require("./pool");
 const session=require("express-session")
 //2:创建express对象
@@ -98,6 +100,19 @@ app.get("/getproducts",(req,res)=>{
 		if (err)throw err;
 		res.send(result)
 	})
+})
+//上传用户头像
+//创建multer对象指定上传文件目录
+var upload = multer({dest:"upload/"})
+app.post("/uploads",upload.single("mypic"),(req,res)=>{ //upload.single 是单个上传 增加req.file属性  req.file.size 单位字节 req.file.mimetype 上传文件类型 req.file.originalname 上传文件原名 req.file.path 临时文件路径
+	//需要express fs multer
+	//创建multer对象指定上传文件目录
+	//创建处理上传请求 /upload 上传单个文件
+	//获取上传文件大小拒绝大于2M
+	//获取文件类型 图片
+	//创建新文件名  时间戳.jpg
+	//将临时文件移动到upload目录下
+	//返回上传成功的信息
 })
 
 //功能2:新闻分页显示
