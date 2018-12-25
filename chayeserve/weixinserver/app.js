@@ -42,6 +42,33 @@ app.get("/imagelist",(req,res)=>{
    ];
    res.send(obj);
 });
+
+app.get("/insert_user",(req,res)=>{
+	var openid = req.query.openid;
+	var nickName = req.query.nickName;
+	var avatarUrl = req.query.avatarUrl;
+	var province = req.query.province;
+	var city = req.query.city;
+	var sql = "INSERT INTO cy_user VALUES(NULL,?,?,?,?,?)"
+	pool.query(sql,[openid,nickName,avatarUrl,province,city],(err,result)=>{
+		if (err) throw err;
+		if (result.affectedRows>0){
+			res.send({code:1})	
+		}
+	})
+})
+
+app.get("/queryByOpenid",(req,res)=>{
+	var openid = req.query.openid;
+	var sql = "SELECT * FROM cy_user WHERE openid=?";
+	pool.query(sql,[openid],(err,result)=>{
+		if (err) throw err;
+		if(result.length>0){
+			res.send(result)
+		}
+	})
+})
+
 app.get("/jiugonggelist",(req,res)=>{
 	var obj =[
 		{ pid: 1, img_url:"http://192.168.43.93:3000/img/jiugongge1.jpg",msg:"全部商品"},
@@ -114,7 +141,6 @@ app.get("/gethomeproducts",(req,res)=>{
 })
 app.get("/getproducts",(req,res)=>{
 	var cleibie=req.query.cleibie;
-	console.log(cleibie)
 	if(cleibie==1){
 		cleibie="普洱";
 	}else if(cleibie==2){
@@ -191,3 +217,11 @@ app.get("/getCarts",(req,res)=>{
 	})
 })
 
+app.get("/getdetail",(req,res)=>{
+	var cid=req.query.cid
+	var sql="SELECT * FROM cy_laptop WHERE cid=?"
+	pool.query(sql,[cid],(err,result)=>{
+		if (err) throw err;
+		res.send(result)
+	})
+})

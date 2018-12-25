@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/home/home",
     "pages/logs/logs",
     "pages/shoplist/shoplist",
     "pages/profile/profile",
-    "pages/login/login",
     "pages/order/order",
     "pages/classification/classification",
     "pages/cart/cart",

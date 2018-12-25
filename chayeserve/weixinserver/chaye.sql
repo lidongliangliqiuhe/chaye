@@ -8,20 +8,14 @@ USE xz;
 /**用户信息**/  #u
 CREATE TABLE cy_user(
   uid										INT PRIMARY KEY AUTO_INCREMENT,	#用户id
-  uname									VARCHAR(32),										#用户名
-  upwd									VARCHAR(32),										#用户密码
-  uemail								VARCHAR(64),										#用户邮箱
-  uphone								VARCHAR(16),										#用户手机
-  uavatar								VARCHAR(128),										#头像图片路径
-  u_name								VARCHAR(32),										#用户名，如王小明
-  ugender								INT															#性别  0-女  1-男
+	openid								VARCHAR(40),										#授权登录openid
+  nickName							VARCHAR(32),										#用户名
+  avatarUrl							VARCHAR(128),										#头像图片路径
+  province							VARCHAR(64),										#用户省份
+  city								  VARCHAR(16)										#用城市
 );
 /*添加用户数据*/
-INSERT INTO cy_user VALUES
-(NULL, 'dingding', '123456', 'li@qq.com', '13501234567', 'img/avatar/default.png', '李迪昂', '1'),
-(NULL, 'dangdang', '123456', 'dang@qq.com', '13501234568', 'img/avatar/default.png', '林当', '1'),
-(NULL, 'doudou', '123456', 'qi@qq.com', '13501234569', 'img/avatar/default.png', '齐世聪', '1'),
-(NULL, 'yaya', '123456', 'ma@qq.com', '13501234560', 'img/avatar/default.png', '马薇薇', '0');
+
 
 
 /**茶叶商品列表**/ #c

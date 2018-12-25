@@ -1,6 +1,12 @@
 /* pages/details/details.wxss */
 @import "../cart/jiajian/jiajian_template.wxss";
 /* foot部分 */
+.foot{
+  display: flex;
+  position: fixed;
+  left:0px;
+  bottom: 20px;
+}
 .add-cart .add-cart-btn,.add-buy .add-buy-btn{
   float:left;
   background:linear-gradient(to right,#FF7A34, #EE32FF);
@@ -13,4 +19,67 @@
   margin-top:5px;
   margin-right:15px;
   margin-left: 18px;
+}
+.buy-count{
+  width: 100%;
+  display: flex;
+  position: fixed;
+  left: 0px;
+  bottom: 80px;
+  justify-content: space-around;
+}
+/* 分割块 */
+.divider{
+  width: 100%;
+  height:6px;
+  background:#ccc;
+}
+.divider1{
+  width: 100%;
+  height:20px;
+  background:#ccc;
+}
+/* 主体部分 */
+.productimg{
+  width:100%;
+}
+.xijie{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding:10px 0px;
+}
+.yunfei{
+  color:#FF7A34;
+}
+.kucun{
+  color:#EE32FF;
+}
+.xiaoliang{
+  color:#ae4567;
+}
+.price{
+  color:red;
+  padding-left: 10px;
+}
+.tprice{
+  font-weight: bold;
+  font-size: 28px;
+  font-style: italic;
+}
+.name{
+  padding-left: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  font-style: italic;
+  color:#384402cc;
+}
+.title{
+  padding-left: 15px;
+  color:#78f304;
+}
+.subtitle{
+  padding-left: 15px;
+  color:#ecd60b;
+  font-size: 18px;
 }

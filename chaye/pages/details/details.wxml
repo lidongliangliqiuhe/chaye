@@ -2,24 +2,36 @@
 <import src="../cart/jiajian/jiajian_template.wxml"/>
 <view>
   <image class='productimg' lazy-load mode="aspectFit" src="http://192.168.43.93:3000/img/product_img/biluochun1.jpg"></image>
-  <text>￥</text>
-  <text class='price'>100</text>
-  <view>
-    <text class='title'>biluochun</text>
+  <!-- 分割区 -->
+  <view class='divider'></view>
+  <view class='name'>取舍龙井</view>
+  <view class='divider'></view>
+  <view class='title'>
+    <text class='ttitle'>新茶龙井春茶绿茶明前龙井茶叶礼盒装罐装买一送一共500克</text>
   </view>
-  <view>
-    <text>运费：包邮</text>
-    <text>库存</text>
-    <text>100</text>
-    <text>销量</text>
-    <text>10</text>
+  <view class='divider'></view>
+  <view class='subtitle'>
+    <text class='tsubtitle'>biluochun</text>
   </view>
-  <view>
-    <view>请选择购买的数量</view>
+  <view class='divider'></view>
+  <view class='price'>
+    <text>￥</text>
+    <text class='tprice'>100.00</text>
+  </view>
+  <view class='divider'></view>
+  <view class='xijie'>
+    <text class='yunfei'>运费：包邮</text>
+    <text class='kucun'>库存:</text>
+    <text class='kucun'>100</text>
+    <text class='xiaoliang'>销量</text>
+    <text class='xiaoliang'>10</text>
+  </view>
+  <view class='divider1'></view>
+  <view class='buy-count'>
+    <view>请选择要购买的数量</view>
     <template is="jiajian" data="{{ ...item,index,minusStatus}}" />
   </view>
   <!-- 分割区 -->
-  <view class='divider'></view>
   <view class='foot'>
     <view class="add-buy sub f16">
       <button class="add-buy-btn" bindtap='buy'>立即购买</button>
