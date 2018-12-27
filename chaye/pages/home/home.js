@@ -1,4 +1,5 @@
 // pages/home/home.js
+var app = getApp()
 Page({
   handleplay: function () {
     var isp=this.data.isPlaying;
@@ -29,10 +30,40 @@ Page({
     })
   },
   details:function(e){
+    console.log(app.globalData.userInfo)
     //console.log(e.target.dataset.id)
     //console.log(this.data.tjlist)
     wx.navigateTo({
       url: '/pages/details/details?cid='+e.target.dataset.id,
+    })
+  },
+  formName: function (e) {
+    this.setData({
+      sousuo: e.detail.value
+    })
+  },
+  addCart:function(e){
+    console.log(app.globalData.userInfo)
+    var cid = e.target.dataset.cid;
+    var uid = app.globalData.userInfo[0].uid;
+    wx.request({
+      url: 'http://192.168.43.93:3000/addCartItem',
+      method:"post",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 改变默认值
+      },
+      data:{
+        cid:cid,
+        uid:uid 
+      },
+      success:(res)=>{
+        wx.showToast({
+          title: '购物车添加成功',
+          icon:"success",
+          duration:2000,
+          mask:true,
+        })
+      }
     })
   },
   /**
@@ -43,7 +74,8 @@ Page({
     isPlaying:0,
     list:[],
     jiugong:[],
-    tjlist:[]
+    tjlist:[],
+    sousuo:null
   },
 
   /**

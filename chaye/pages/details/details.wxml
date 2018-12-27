@@ -1,30 +1,30 @@
 <!--pages/details/details.wxml-->
 <import src="../cart/jiajian/jiajian_template.wxml"/>
 <view>
-  <image class='productimg' lazy-load mode="aspectFit" src="http://192.168.43.93:3000/img/product_img/biluochun1.jpg"></image>
+  <image class='productimg' lazy-load mode="aspectFit" src="{{info.cimg}}"></image>
   <!-- 分割区 -->
   <view class='divider'></view>
-  <view class='name'>取舍龙井</view>
+  <view class='name'>{{info.cname}}</view>
   <view class='divider'></view>
   <view class='title'>
-    <text class='ttitle'>新茶龙井春茶绿茶明前龙井茶叶礼盒装罐装买一送一共500克</text>
+    <text class='ttitle'>{{info.ctitle}}</text>
   </view>
   <view class='divider'></view>
   <view class='subtitle'>
-    <text class='tsubtitle'>biluochun</text>
+    <text class='tsubtitle'>{{info.csubtitle}}</text>
   </view>
   <view class='divider'></view>
   <view class='price'>
     <text>￥</text>
-    <text class='tprice'>100.00</text>
+    <text class='tprice'>{{info.cprice}}</text>
   </view>
   <view class='divider'></view>
   <view class='xijie'>
     <text class='yunfei'>运费：包邮</text>
     <text class='kucun'>库存:</text>
-    <text class='kucun'>100</text>
+    <text class='kucun'>{{info.csold_count*2}}</text>
     <text class='xiaoliang'>销量</text>
-    <text class='xiaoliang'>10</text>
+    <text class='xiaoliang'>{{info.csold_count}}</text>
   </view>
   <view class='divider1'></view>
   <view class='buy-count'>

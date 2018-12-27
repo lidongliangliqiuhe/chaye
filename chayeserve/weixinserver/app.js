@@ -3,7 +3,8 @@ const express = require("express");
 const fs = require("fs")
 const multer = require("multer")
 const pool = require("./pool");
-const session=require("express-session")
+const session = require("express-session")
+const bodyParser = require("body-parser");
 //2:创建express对象
 var app = express();
 //2.1:加载跨域访问组件
@@ -23,7 +24,10 @@ app.use(session({
 	resave:false,              //请求保存
 	saveUninitialized:true     //初始化保存
 }))
-
+//2.4配置body-parser
+app.use(bodyParser.urlencoded({
+  extended:false
+}));
 //3:指定监听端口3000
 app.listen(3000);
 //4:指定静态目录 public
@@ -224,4 +228,19 @@ app.get("/getdetail",(req,res)=>{
 		if (err) throw err;
 		res.send(result)
 	})
+})
+
+app.post("/addCartItem",(req,res)=>{
+	var cid = req.body.cid;
+	var uid = req.body.uid;
+	var sql1 = "INSERT INTO cy_shoppingcart_item VALUES(NULL,?,?,1,0)"
+	pool.query(sql1,[uid,cid],(err,result)=>{
+		if (err) throw err;
+		if(result.affectedRows>0){
+			res.send({code:1})
+		}else{
+			res.send({code:2})
+		}
+	})
+
 })

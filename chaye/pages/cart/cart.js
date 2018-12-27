@@ -1,5 +1,5 @@
 // pages/cart/cart.js
-const app = getApp()
+var app = getApp()
 Page({
   Minus: function (e) {
     var num = this.data.carts[e.target.dataset.id].gcount;

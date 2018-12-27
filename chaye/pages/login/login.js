@@ -1,13 +1,15 @@
+var app = getApp()
 Page({
   bindGetUserInfo: function (e) {
     if (e.detail.userInfo) {
+      app.globalData.userInfo = e.detail.userInfo;
       //用户按了允许授权按钮
       var that = this;
       //插入登录的用户的相关信息到数据库
       wx.request({
         url:'http://192.168.43.93:3000/insert_user',
         data: {
-          openid: getApp().globalData.openid,
+          openid: app.globalData.openid,
           nickName: e.detail.userInfo.nickName,
           avatarUrl: e.detail.userInfo.avatarUrl,
           province: e.detail.userInfo.province,
@@ -52,8 +54,7 @@ Page({
         'content-type': 'application/json'
       },
       success: function (res) {
-        console.log(res.data);
-        getApp().globalData.userInfo = res.data;
+        getApp().globalData.userInfo = res.data;//用户信息保存到app.js中的userInfo 中
       }
     })
   },

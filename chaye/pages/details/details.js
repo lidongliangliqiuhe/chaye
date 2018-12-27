@@ -1,11 +1,39 @@
 // pages/details/details.js
 Page({
-
+  Minus: function (e) {
+    var num = this.data.item.gcount;
+    var num1 = "item.gcount";
+    if (num > 1) {
+      num--;
+    }
+    var minusStatus = num > 1 ? 'normal' : 'disable';
+    this.setData({
+      [num1]: num,
+      minusStatus: minusStatus
+    })
+  },
+  /*点击加号*/
+  Plus: function (e) {
+    var num = this.data.item.gcount;
+    var num1 = "item.gcount";
+    num++;
+    var minusStatus = 'normal';
+    this.setData({
+      [num1]: num,
+      minusStatus: minusStatus
+    })
+  },
   /**
    * 页面的初始数据
    */
   data: {
-
+    num:1,
+    info:[],
+    minusStatus:"normal",
+    index:0,
+    item:{
+      gcount:1
+    }
   },
 
   /**
@@ -19,7 +47,12 @@ Page({
         cid:options.cid
       },
       success:(res)=>{
-        console.log(res)
+        //console.log(res.data[0])
+        this.setData({
+          info:res.data[0],
+          index:res.data[0].cid
+        })
+        console.log(this.data.index)
       }
     })
   },

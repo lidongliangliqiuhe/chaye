@@ -12,7 +12,6 @@ App({
         })
       }
     });
-    console.log(this.globalData.openid)
   },
   globalData: {
     userInfo: null,
