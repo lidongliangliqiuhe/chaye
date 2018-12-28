@@ -30,7 +30,7 @@ Page({
     })
   },
   details:function(e){
-    console.log(app.globalData.userInfo)
+    //console.log(app.globalData.userInfo)
     //console.log(e.target.dataset.id)
     //console.log(this.data.tjlist)
     wx.navigateTo({
@@ -43,7 +43,7 @@ Page({
     })
   },
   addCart:function(e){
-    console.log(app.globalData.userInfo)
+    //console.log(app.globalData.userInfo)
     var cid = e.target.dataset.cid;
     var uid = app.globalData.userInfo[0].uid;
     wx.request({

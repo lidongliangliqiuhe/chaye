@@ -3,15 +3,15 @@
 <view class="classify">
   <!--分类导航栏-->
   <scroll-view class='left-navbar' scroll-y="true">
-    <view wx:for="{{leftnav}}" class="{{ styletab == index ? 'active' : '' }}" wx:key="index" catchtap="{{ styletab != index ? 'navbarTap':'' }}" id="{{index}}" data-screenId="{{index}}">{{item.cleibie}}
+    <view wx:for="{{leftnav}}" class="{{ styleTab == index ? 'active' : '' }}" wx:key="index" catchtap="{{ styletab != index ? 'navbarTap':'' }}" id="{{index}}" data-screenId="{{index}}">{{item.cleibie}}
      </view>
   </scroll-view>
   <!-- 对应导航项 的商品列表 -->
   <scroll-view id="right" scroll-y="true" scroll-top="{{scrollTop}}">
-    <view class="goods-list" wx:for="{{products}}" catchtap="ToSearchResult" wx:key="index">
+    <view class="goods-list" wx:for="{{products}}" catchtap="gotodetail" data-cid="{{item.cid}}" wx:key="index">
       <image class="img" src="{{item.cimg}}" mode='aspectFit' lazy-load></image>
       <text>{{item.cname}}</text>
-      <image class='img1' lazy-load mode="aspectFit" src="http://192.168.43.93:3000/img/littlecart.png"></image>
+      <image catchtap='addCard' class='img1' lazy-load mode="aspectFit" src="http://192.168.43.93:3000/img/littlecart.png"></image>
     </view>
   </scroll-view>
 </view>

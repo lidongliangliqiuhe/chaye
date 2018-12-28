@@ -34,9 +34,11 @@
     <view class='tjlist-item' wx:for='{{tjlist}}' wx:key="index">
       <image class='tjimg' src="{{item.cimg}}" lazy-load mode="aspectFit"  data-id="{{item.cid}}" catchtap='details'></image>
       <text class='tjmsg'>{{item.ctitle}}</text>
-      <view>
+      <view class='quyu'>
         <text class='tjprice'>￥{{item.cprice}}</text>
-        <image class='tjcart'  catchtap='addCart' data-cid='{{item.cid}}' src='http://192.168.43.93:3000/img/littlecart.png' lazy-load mode="aspectFit"></image>
+        <view class='tjcart'  bindtap='addCart' data-cid='{{item.cid}}'>
+          <image src='http://192.168.43.93:3000/img/littlecart.png' lazy-load mode="aspectFit"></image>
+        </view>
       </view>
     </view>
   </view>

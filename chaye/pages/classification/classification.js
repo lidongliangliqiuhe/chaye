@@ -1,32 +1,71 @@
 // pages/classification/classification.js
+var app=getApp();
 Page({
   navbarTap: function (e) {
     var that = this;
-    console.log(e);
+    //console.log(e);
     this.setData({
-      currentTab: e.currentTarget.id,   //按钮CSS变化
+      styleTab: e.currentTarget.id,   //按钮CSS变化
       screenId: e.currentTarget.dataset.screenid,
       scrollTop: 0,   //切换导航后，控制右侧滚动视图回到顶部
     })
+    //console.log(this.data.styleTab)
     //刷新右侧内容的数据
     var screenId = this.data.screenId;
-    request.sendRrquest(API_queryClassify, 'POST', { flag: 1, screenId: screenId })
-      .then(function (res) {
-        console.log("返回数据：");
-        that.setData({
-          childrenArray: res.data.data.screenArray[0],
+    wx.request({
+      url: 'http://192.168.43.93:3000/getproducts',
+      data:{
+        cleibie:screenId
+      },
+      success: (res) => {
+        this.setData({
+          products: res.data
         })
-        console.log(that.data.childrenArray);
-      }, function (error) { console.log("返回失败"); });
+
+      }
+    })
+    
   },
+  addCard:function(e){
+    console.log(e)
+    var cid = e.target.dataset.cid;
+    var uid = app.globalData.userInfo[0].uid;
+    wx.request({
+      url: 'http://192.168.43.93:3000/addCartItem',
+      method: "post",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 改变默认值
+      },
+      data: {
+        cid: cid,
+        uid: uid
+      },
+      success: (res) => {
+        wx.showToast({
+          title: '购物车添加成功',
+          icon: "success",
+          duration: 2000,
+          mask: true,
+        })
+      }
+    })
+  },
+  gotodetail:function(e){
+    console.log(e.currentTarget.dataset.cid)
+    wx.navigateTo({
+      url: '/pages/details/details?cid=' + e.currentTarget.dataset.cid,
+    })
+  },
+  
   /**
    * 页面的初始数据
    */
   data: {
-    styletab: 0,  //对应样式变化及后台查询字段
+    screenId:0,
+    styleTab: 0,  //对应样式变化及后台查询字段
     scrollTop: 0,  //用作跳转后右侧视图回到顶部
     leftnav: [], //左侧导航栏内容
-    peoducts: [], //右侧内容
+    products: [], //右侧内容
   },
 
   /**
@@ -36,7 +75,7 @@ Page({
     wx.request({
       url: 'http://192.168.43.93:3000/getClassList',
       success:(res)=>{
-        console.log(res.data)
+        //console.log(res.data)
         this.setData({
           leftnav:res.data
         })
@@ -46,14 +85,13 @@ Page({
       url: 'http://192.168.43.93:3000/getproducts',
       method:"get",
       data:{
-        cleibie:1
+        cleibie:this.data.screenId
       },
       success: (res) => {
-        console.log(res.data)
+        //console.log(res.data)
         this.setData({
           products:res.data
         })
-        
       }
     })
   },

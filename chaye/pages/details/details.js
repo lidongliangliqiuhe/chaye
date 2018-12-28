@@ -1,4 +1,5 @@
 // pages/details/details.js
+var app = getApp()
 Page({
   Minus: function (e) {
     var num = this.data.item.gcount;
@@ -23,6 +24,39 @@ Page({
       minusStatus: minusStatus
     })
   },
+  buy:function(){
+    wx.showToast({
+      title: '购买成功',
+      icon: "success",
+      duration: 2000,
+      mask: true,
+    })
+  },
+  cart:function(){
+    console.log(app.globalData.userInfo[0].uid)
+    console.log(this.data.index)
+    var cid = this.data.index
+    var uid = app.globalData.userInfo[0].uid;
+    wx.request({
+      url: 'http://192.168.43.93:3000/addCartItem',
+      method: "post",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 改变默认值
+      },
+      data: {
+        cid: cid,
+        uid: uid
+      },
+      success: (res) => {
+        wx.showToast({
+          title: '购物车添加成功',
+          icon: "success",
+          duration: 2000,
+          mask: true,
+        })
+      }
+    })
+  },
   /**
    * 页面的初始数据
    */
@@ -40,6 +74,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
     wx.request({
       url: 'http://192.168.43.93:3000/getdetail',
       method:"get",
@@ -52,7 +87,7 @@ Page({
           info:res.data[0],
           index:res.data[0].cid
         })
-        console.log(this.data.index)
+        //console.log(this.data.index)
       }
     })
   },

@@ -47,7 +47,7 @@
 }
 .tjlist .tjlist-item{
   width:49%;
-  height:500rpx;
+  height:420rpx;
   box-sizing: border-box;
   text-align: center;
 }
@@ -59,22 +59,31 @@ text.tjmsg{
   display: inline-block;
   font-size: 14px;
   width:360rpx;
-  height: 42px;
+  height: 21px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.quyu{
+  position: relative;
 }
 text.tjprice{
   float: left;
   color:red;
   margin-left:20px;
 }
-image.tjcart{
+.tjcart{
+  position:absolute;
+  top:0px;
+  right:0px;
+  z-index: 10;
   width:50rpx;
   height: 50rpx;
-  float: right;
-  margin-right:20rpx;
-  margin-bottom: 600rpx;
+  
+}
+.tjcart image{
+  width:50rpx;
+  height: 50rpx;
 }
 .yinyue{
   width:100%;

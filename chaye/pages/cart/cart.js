@@ -90,7 +90,7 @@ Page({
   },
   toBuy:function(){
     wx.showToast({
-      title: '去结算',
+      title: '结算成功',
       icon: 'success',
       duration: 3000
     });
